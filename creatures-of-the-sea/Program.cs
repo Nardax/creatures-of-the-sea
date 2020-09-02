@@ -7,12 +7,23 @@ namespace CreaturesOfTheSea
 {
     class Program
     {
-        public static object Creatures = null;
+        public static string[,] Creatures;
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Initializing Creatures!");
+            InializeCreatures();
+
             Console.WriteLine("Moving Creatures!");
             MoveCreatures();
+        }
+
+        private static void InializeCreatures()
+        {
+            Creatures = new string[10, 10];
+            Creatures[2, 7] = "C";
+            Creatures[5, 1] = "F";
+            Creatures[9, 0] = "S";
         }
 
         public static void MoveCreatures()
