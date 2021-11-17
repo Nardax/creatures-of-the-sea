@@ -1,7 +1,4 @@
-﻿using creatures_of_the_sea;
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Threading;
+﻿using System;
 
 namespace CreaturesOfTheSea
 {
@@ -12,13 +9,13 @@ namespace CreaturesOfTheSea
         static void Main(string[] args)
         {
             Console.WriteLine("Initializing Creatures!");
-            InializeCreatures();
+            InitializeCreatures();
 
             Console.WriteLine("Moving Creatures!");
             MoveCreatures();
         }
 
-        private static void InializeCreatures()
+        private static void InitializeCreatures()
         {
             Creatures = new string[10, 10];
             Creatures[2, 7] = "C";
@@ -36,5 +33,13 @@ namespace CreaturesOfTheSea
             var randomValue = random.Next(0, 4);
             return (Direction)randomValue;
         }
+    }
+
+    public enum Direction
+    {
+        Up,
+        Down,
+        Left,
+        Right
     }
 }
